@@ -36,7 +36,7 @@ const isActive = (path) => {
         </div>
 
         <!-- 桌面端导航 -->
-        <div class="hidden md:flex space-x-8">
+        <div class="hidden md:flex space-x-8 items-center">
           <button @click="navigateTo('/')"
             class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium pb-1"
             :class="{ 'text-primary border-b-2 border-secondary': isActive('/') }">
@@ -56,6 +56,11 @@ const isActive = (path) => {
             class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium pb-1"
             :class="{ 'text-primary border-b-2 border-secondary': isActive('/contact') }">
             联系我们
+          </button>
+          <button @click="navigateTo('/admin/login')"
+            class="text-gray-500 hover:text-secondary transition-colors duration-300 font-medium text-sm"
+            title="管理员入口">
+            🔐
           </button>
         </div>
 
@@ -92,6 +97,10 @@ const isActive = (path) => {
             class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium text-left py-2"
             :class="{ 'text-primary': isActive('/contact') }">
             联系我们
+          </button>
+          <button @click="navigateTo('/admin/login')"
+            class="text-gray-500 hover:text-secondary transition-colors duration-300 font-medium text-left py-2">
+            🔐 管理员入口
           </button>
         </div>
       </div>

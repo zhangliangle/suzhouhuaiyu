@@ -1,34 +1,18 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import { products } from '../api/productList.js'
 
 const router = useRouter()
-
-const products = [
-  {
-    name: '铝合金节能管道',
-    description: '专为空压机系统设计，内壁光滑不生锈，节能效果显著',
-    badge: '热销产品',
-    specs: ['规格：DN20-DN200', '材质：6063铝合金', '工作压力：0.4-2.5MPa']
-  },
-  {
-    name: '管道连接件',
-    description: '快速接头、法兰、弯头等配套齐全，安装便捷',
-    badge: '推荐',
-    specs: ['多种规格可选', '快速插拔设计', '密封性能优异']
-  },
-  {
-    name: '阀门系列',
-    description: '球阀、蝶阀、止回阀等，品质可靠寿命长',
-    badge: null,
-    specs: ['材质：铜合金/不锈钢', '耐高温耐腐蚀', '操作灵活省力']
-  },
-  {
-    name: '过滤器',
-    description: '高效过滤空气中杂质，保护用气设备安全运行',
-    badge: '新品',
-    specs: ['过滤精度：0.01μm', '自动排污功能', '压差提示报警']
-  }
-]
+const productsList = ref(
+  Object.entries(products).map(([id, data]) => ({
+    id,
+    name: data.name,
+    description: data.description,
+    image: data.subProducts?.[0]?.image || '',
+    link: `/product/${id}`
+  }))
+)
 
 const navigateTo = (path) => {
   router.push(path)
@@ -48,24 +32,19 @@ const navigateTo = (path) => {
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div
-            v-for="(product, index) in products"
-            :key="index"
-            class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-          >
+          <div v-for="(product, index) in productsList" :key="index"
+            class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
             <!-- 产品图片占位 -->
             <div class="h-48 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center">
-              <div class="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-300">
+              <img v-if="product.image" :src="product.image" :alt="product.name" class="w-full h-full object-cover" />
+              <div v-else class="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-300">
                 🔧
               </div>
             </div>
 
             <!-- 标签 -->
-            <div
-              v-if="product.badge"
-              class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold text-white"
-              :class="product.badge === '新品' ? 'bg-accent' : product.badge === '热销产品' ? 'bg-secondary' : 'bg-primary'"
-            >
+            <div v-if="product.badge" class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold text-white"
+              :class="product.badge === '新品' ? 'bg-accent' : product.badge === '热销产品' ? 'bg-secondary' : 'bg-primary'">
               {{ product.badge }}
             </div>
 
@@ -76,17 +55,9 @@ const navigateTo = (path) => {
               <p class="text-gray-600 text-sm leading-relaxed mb-4">
                 {{ product.description }}
               </p>
-              <div class="space-y-1 mb-4">
-                <p
-                  v-for="(spec, idx) in product.specs"
-                  :key="idx"
-                  class="text-xs text-gray-500 flex items-center"
-                >
-                  <span class="w-1 h-1 bg-secondary rounded-full mr-2"></span>
-                  {{ spec }}
-                </p>
-              </div>
-              <button class="mt-2 text-secondary font-semibold flex items-center group-hover:translate-x-2 transition-transform duration-300">
+
+              <button @click="navigateTo(product.link)"
+                class="mt-2 text-secondary font-semibold flex items-center group-hover:translate-x-2 transition-transform duration-300">
                 了解详情
                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

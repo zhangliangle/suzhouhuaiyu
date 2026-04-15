@@ -1,14 +1,19 @@
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue'
+
+const route = useRoute()
+const showFooter = computed(() => !route.path.startsWith('/admin'))
 </script>
 
 <template>
   <div class="min-h-screen bg-white">
-    <NavBar />
-    <main class="pt-20">
+    <NavBar v-if="!route.path.startsWith('/admin')" />
+    <main :class="{ 'pt-20': !route.path.startsWith('/admin') }">
       <router-view />
     </main>
-    <footer class="bg-primary text-white py-12">
+    <footer v-if="showFooter" class="bg-primary text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <div>
