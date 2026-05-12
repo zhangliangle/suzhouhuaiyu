@@ -8,9 +8,9 @@ const companyInfo = {
   name: '宿州淮宇节能科技有限公司',
   tagline: '空压机铝合金节能管道专家',
   description: '专注节能管道系统研发与生产，为工业用户提供高效、可靠的压缩空气输送解决方案',
-  founded: '2025年',
-  employees: '50+',
-  customers: '500+'
+  founded: '2024年',
+  departments: '100%',
+  repurchaseRate: '90%'
 }
 const features = reactive([
   { icon: '⚡', title: '节能高效', description: '采用优质铝合金材料，内壁光滑阻力小，大幅降低压降损失' },
@@ -157,16 +157,20 @@ html {
         <!-- 数据展示 -->
         <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto fade-in-up stagger-3 mb-12">
           <div class="text-center">
+            <!-- 强调深耕 -->
             <div class="text-4xl md:text-5xl font-bold text-secondary">{{ companyInfo.founded }}</div>
-            <div class="text-sm md:text-base opacity-80 mt-2">成立年份</div>
+            <div class="text-sm md:text-base opacity-80 mt-2">深耕行业始于</div>
           </div>
           <div class="text-center">
-            <div class="text-4xl md:text-5xl font-bold text-secondary">{{ companyInfo.employees }}</div>
-            <div class="text-sm md:text-base opacity-80 mt-2">专业团队</div>
+            <!-- 强调职能全覆盖，而不是人数 -->
+            <div class="text-4xl md:text-5xl font-bold text-secondary">{{ companyInfo.departments }}+</div>
+            <div class="text-sm md:text-base opacity-80 mt-2">资深专家占比</div>
           </div>
           <div class="text-center">
-            <div class="text-4xl md:text-5xl font-bold text-secondary">{{ companyInfo.customers }}</div>
-            <div class="text-sm md:text-base opacity-80 mt-2">服务客户</div>
+            <!-- 高复购率是最强背书 -->
+            <div class="text-4xl md:text-5xl font-bold text-secondary">{{ companyInfo.repurchaseRate }}<span
+                class="text-2xl">%</span></div>
+            <div class="text-sm md:text-base opacity-80 mt-2">客户续约/复购率</div>
           </div>
         </div>
 
@@ -210,7 +214,7 @@ html {
           <div>
             <h2 class="text-4xl font-bold text-primary mb-6">关于我们</h2>
             <p class="text-gray-600 mb-6 leading-relaxed">
-              宿州淮宇节能科技有限公司成立于2015年，是一家专注于空压机铝合金节能管道研发、生产与销售的高科技企业。公司位于安徽省萧县鸿宇节能建材城，拥有现代化的生产基地和专业的研发团队。
+              宿州淮宇节能科技有限公司成立于2024年，是一家专注于空压机铝合金节能管道研发、生产与销售的高科技企业。公司位于安徽省萧县鸿宇节能建材城，拥有现代化的生产基地和专业的研发团队。
             </p>
             <p class="text-gray-600 mb-8 leading-relaxed">
               我们致力于为工业用户提供高效、可靠的压缩空气输送解决方案，通过不断创新和技术升级，为客户创造更大的价值。公司产品广泛应用于汽车制造、电子加工、食品医药、纺织印染等多个行业。
@@ -362,7 +366,7 @@ html {
     </section>
 
     <!-- 新闻动态 -->
-    <section class="py-24 bg-[#f0f4f8]">
+    <!-- <section class="py-24 bg-[#f0f4f8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-primary mb-4">新闻动态</h2>
@@ -390,10 +394,10 @@ html {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- 合作伙伴 -->
-    <section class="py-24 bg-white">
+    <!-- <section class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-primary mb-4">合作伙伴</h2>
@@ -407,6 +411,6 @@ html {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>

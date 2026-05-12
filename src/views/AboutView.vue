@@ -44,15 +44,15 @@ const navigateTo = (path) => {
           <div>
             <h3 class="text-3xl font-bold text-primary mb-6">专注节能管道 · 助力绿色工业</h3>
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              宿州淮宇节能科技有限公司成立于2015年，是一家专业从事空压机铝合金节能管道研发、生产、销售和服务的高新技术企业。
+              宿州淮宇节能科技有限公司成立于2024年，是一家专业从事空压机铝合金节能管道生产、销售和服务的高新技术企业。
             </p>
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              公司拥有先进的生产设备和完善的检测手段，产品广泛应用于机械、电子、化工、食品、医药等行业的压缩空气输送系统。我们致力于为客户提供高效、节能、可靠的管道系统解决方案。
+              7.5-750kw永磁变频、双级压缩一级能效螺杆，空压机储气罐、干燥机、过滤器、制氮机等。承接各品牌空压机、维修、保养、节能管道机电安装等业务。
             </p>
             <div class="flex flex-wrap gap-4">
               <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">ISO9001认证</span>
               <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">高新技术企业</span>
-              <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">多项专利</span>
+              <!-- <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">多项专利</span> -->
             </div>
           </div>
 
@@ -60,11 +60,8 @@ const navigateTo = (path) => {
             <div class="bg-gradient-to-br from-primary to-accent rounded-2xl p-1">
               <div class="bg-white rounded-2xl p-8">
                 <div class="grid grid-cols-2 gap-6">
-                  <div
-                    v-for="(feature, index) in features"
-                    :key="index"
-                    class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
-                  >
+                  <div v-for="(feature, index) in features" :key="index"
+                    class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
                     <div class="text-4xl mb-3">{{ feature.icon }}</div>
                     <h4 class="text-lg font-bold text-primary mb-2">{{ feature.title }}</h4>
                     <p class="text-sm text-gray-600">{{ feature.description }}</p>
@@ -103,7 +100,7 @@ const navigateTo = (path) => {
           <div class="space-y-8">
             <div class="flex items-start gap-6">
               <div class="w-24 flex-shrink-0 text-right">
-                <span class="text-2xl font-bold text-secondary">2015</span>
+                <span class="text-2xl font-bold text-secondary">2024</span>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow p-6">
                 <h4 class="font-bold text-primary mb-2">公司成立</h4>
@@ -112,31 +109,23 @@ const navigateTo = (path) => {
             </div>
             <div class="flex items-start gap-6">
               <div class="w-24 flex-shrink-0 text-right">
-                <span class="text-2xl font-bold text-secondary">2018</span>
+                <span class="text-2xl font-bold text-secondary">2025</span>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow p-6">
-                <h4 class="font-bold text-primary mb-2">获得高新技术企业认证</h4>
-                <p class="text-gray-600">通过国家高新技术企业认定，技术研发实力获得认可</p>
+                <h4 class="font-bold text-primary mb-2">产品认证</h4>
+                <p class="text-gray-600">属于自己的仓库，严格控制生产流程，确保产品质量</p>
               </div>
             </div>
             <div class="flex items-start gap-6">
               <div class="w-24 flex-shrink-0 text-right">
-                <span class="text-2xl font-bold text-secondary">2020</span>
+                <span class="text-2xl font-bold text-secondary">2026</span>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow p-6">
-                <h4 class="font-bold text-primary mb-2">扩大生产规模</h4>
-                <p class="text-gray-600">新建现代化生产线，年产能大幅提升</p>
+                <h4 class="font-bold text-primary mb-2">继续前进</h4>
+                <p class="text-gray-600">挑战更高目标，为客户提供更好的服务......</p>
               </div>
             </div>
-            <div class="flex items-start gap-6">
-              <div class="w-24 flex-shrink-0 text-right">
-                <span class="text-2xl font-bold text-secondary">2024</span>
-              </div>
-              <div class="flex-1 bg-white rounded-lg shadow p-6">
-                <h4 class="font-bold text-primary mb-2">服务500+客户</h4>
-                <p class="text-gray-600">累计服务超过500家企业客户，产品出口多个国家和地区</p>
-              </div>
-            </div>
+
           </div>
         </div>
 

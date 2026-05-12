@@ -3,13 +3,13 @@ import { ref } from 'vue'
 
 const contactInfo = {
   company: '宿州淮宇节能科技有限公司',
-  address: '安徽省宿州市高新技术产业开发区创新路88号',
-  phone: '0557-8888888',
-  mobile: '138-8888-8888',
-  email: 'info@suzhouhuaiyu.com',
+  address: '安徽省萧县鸿宇节能建材城空压机节能管道库',
+  // phone: '0557-8888888',
+  mobile: '130-3500-7585',
+  email: '447358575@qq.com',
   website: 'www.suzhouhuaiyu.com',
   wechat: '淮宇节能',
-  qq: '88888888',
+  qq: '447358575',
   workingHours: '周一至周六 8:30-17:30'
 }
 
@@ -108,10 +108,7 @@ const copyToClipboard = (text) => {
                   <div class="text-3xl flex-shrink-0">📞</div>
                   <div class="flex-1">
                     <h4 class="font-semibold text-gray-800 mb-1">联系电话</h4>
-                    <p class="text-gray-600">
-                      <span class="text-primary font-medium">{{ contactInfo.phone }}</span>
-                      （座机）
-                    </p>
+
                     <p class="text-gray-600">
                       <span class="text-primary font-medium">{{ contactInfo.mobile }}</span>
                       （手机）
@@ -181,10 +178,7 @@ const copyToClipboard = (text) => {
               <h3 class="text-xl font-bold mb-4">快速咨询</h3>
               <p class="opacity-90 mb-6">如果您有任何疑问或需要帮助，请随时联系我们</p>
               <div class="space-y-3">
-                <p class="flex items-center">
-                  <span class="text-2xl mr-3">📞</span>
-                  <span class="text-xl font-bold">{{ contactInfo.phone }}</span>
-                </p>
+
                 <p class="flex items-center">
                   <span class="text-2xl mr-3">📱</span>
                   <span class="text-xl font-bold">{{ contactInfo.mobile }}</span>
@@ -204,24 +198,18 @@ const copyToClipboard = (text) => {
                   <label class="block text-gray-700 font-medium mb-2">
                     您的姓名 <span class="text-red-500">*</span>
                   </label>
-                  <input
-                    v-model="formData.name"
-                    type="text"
+                  <input v-model="formData.name" type="text"
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    placeholder="请输入您的姓名"
-                  />
+                    placeholder="请输入您的姓名" />
                 </div>
 
                 <div>
                   <label class="block text-gray-700 font-medium mb-2">
                     联系电话 <span class="text-red-500">*</span>
                   </label>
-                  <input
-                    v-model="formData.phone"
-                    type="tel"
+                  <input v-model="formData.phone" type="tel"
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    placeholder="请输入您的电话"
-                  />
+                    placeholder="请输入您的电话" />
                 </div>
               </div>
 
@@ -230,24 +218,18 @@ const copyToClipboard = (text) => {
                   <label class="block text-gray-700 font-medium mb-2">
                     公司名称
                   </label>
-                  <input
-                    v-model="formData.company"
-                    type="text"
+                  <input v-model="formData.company" type="text"
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    placeholder="请输入公司名称"
-                  />
+                    placeholder="请输入公司名称" />
                 </div>
 
                 <div>
                   <label class="block text-gray-700 font-medium mb-2">
                     电子邮箱
                   </label>
-                  <input
-                    v-model="formData.email"
-                    type="email"
+                  <input v-model="formData.email" type="email"
                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    placeholder="请输入您的邮箱"
-                  />
+                    placeholder="请输入您的邮箱" />
                 </div>
               </div>
 
@@ -255,10 +237,8 @@ const copyToClipboard = (text) => {
                 <label class="block text-gray-700 font-medium mb-2">
                   感兴趣的产品
                 </label>
-                <select
-                  v-model="formData.product"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300 bg-white"
-                >
+                <select v-model="formData.product"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300 bg-white">
                   <option value="">请选择产品类型</option>
                   <option v-for="product in products" :key="product" :value="product">
                     {{ product }}
@@ -270,19 +250,13 @@ const copyToClipboard = (text) => {
                 <label class="block text-gray-700 font-medium mb-2">
                   留言内容 <span class="text-red-500">*</span>
                 </label>
-                <textarea
-                  v-model="formData.message"
-                  rows="5"
+                <textarea v-model="formData.message" rows="5"
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300 resize-none"
-                  placeholder="请输入您的留言内容..."
-                ></textarea>
+                  placeholder="请输入您的留言内容..."></textarea>
               </div>
 
-              <button
-                type="submit"
-                :disabled="isSubmitting"
-                class="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+              <button type="submit" :disabled="isSubmitting"
+                class="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
                 <span v-if="isSubmitting">提交中...</span>
                 <span v-else>提交留言</span>
               </button>

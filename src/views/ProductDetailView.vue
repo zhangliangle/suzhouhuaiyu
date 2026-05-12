@@ -155,6 +155,7 @@ const goBack = () => {
 
         <!-- 规格参数表格 -->
         <div v-show="activeTab === 'specs'" class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
           <table class="w-full">
             <thead class="bg-primary text-white">
               <tr>
@@ -177,6 +178,7 @@ const goBack = () => {
               </tr>
             </tbody>
           </table>
+          <div style="color:red;margin-left:20px">以上价格仅供参考，产品实际价格以报价为准</div>
         </div>
 
         <!-- 常见问题 -->
