@@ -8,6 +8,7 @@ const route = useRoute()
 const router = useRouter()
 const activeTab = ref('specs')
 const priceStore = usePriceStore()
+const currentImageIndex = ref(0)
 
 const productId = computed(() => route.params.id)
 const product = computed(() => products[productId.value])
@@ -28,6 +29,17 @@ const currentImages = computed(() => {
   if (!product.value) return []
   return getProductImages(product.value)
 })
+
+const currentMainImage = computed(() => {
+  if (currentImages.value.length > 0 && currentImageIndex.value < currentImages.value.length) {
+    return currentImages.value[currentImageIndex.value]
+  }
+  return null
+})
+
+const selectImage = (index) => {
+  currentImageIndex.value = index
+}
 
 const handlePricesUpdate = () => {
   priceStore.state.prices = priceStore.state.prices
@@ -50,7 +62,7 @@ const goBack = () => {
 </script>
 
 <template>
-  <div class="pt-20 min-h-screen bg-gray-50" v-if="product">
+  <div class="pt-20 min-h-screen bg-[#f0f4f8]" v-if="product">
     <!-- 面包屑导航 -->
     <div class="bg-white border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -72,15 +84,16 @@ const goBack = () => {
           <div class="space-y-4">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/10">
-                <img v-if="currentImages[0]" :src="currentImages[0]" :alt="product.name"
-                  class="object-contain w-full h-full" />
+                <img v-if="currentMainImage" :src="currentMainImage" :alt="product.name"
+                  class="object-contain w-full h-full transition-opacity duration-300" />
                 <div v-else class="text-9xl opacity-30">🔧</div>
               </div>
             </div>
             <!-- 缩略图 -->
             <div class="grid grid-cols-4 gap-4" v-if="currentImages.length > 1">
-              <div v-for="(img, index) in currentImages" :key="index"
-                class="bg-white rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
+              <div v-for="(img, index) in currentImages" :key="index" @click="selectImage(index)"
+                class="bg-white rounded-lg shadow overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300"
+                :class="{ 'ring-2 ring-secondary shadow-md': currentImageIndex === index }">
                 <img :src="img" :alt="`${product.name} ${index + 1}`" class="w-full h-full object-cover" />
               </div>
             </div>

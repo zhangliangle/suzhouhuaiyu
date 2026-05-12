@@ -34,7 +34,7 @@ const navigateTo = (path) => {
 <template>
   <div class="pt-20">
     <!-- 关于我们 -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#f0f4f8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-title">关于我们</h2>

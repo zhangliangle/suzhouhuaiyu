@@ -79,7 +79,7 @@ const copyToClipboard = (text) => {
     </section>
 
     <!-- 联系方式 -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#f0f4f8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12">
           <!-- 联系信息 -->
@@ -318,7 +318,7 @@ const copyToClipboard = (text) => {
     </section>
 
     <!-- 服务承诺 -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#f0f4f8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">服务承诺</h2>

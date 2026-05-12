@@ -76,7 +76,7 @@ const navigateTo = (path) => {
     </section>
 
     <!-- 产品优势 -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#f0f4f8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">产品优势</h2>
@@ -130,22 +130,22 @@ const navigateTo = (path) => {
         </div>
 
         <div class="grid md:grid-cols-4 gap-6">
-          <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-center p-6 bg-[#f0f4f8] rounded-xl">
             <div class="text-4xl mb-3">🏭</div>
             <h3 class="font-bold text-primary mb-2">工业制造</h3>
             <p class="text-sm text-gray-600">机械加工、电子电器、汽车制造</p>
           </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-center p-6 bg-[#f0f4f8] rounded-xl">
             <div class="text-4xl mb-3">💊</div>
             <h3 class="font-bold text-primary mb-2">医药化工</h3>
             <p class="text-sm text-gray-600">制药、食品加工、精细化工</p>
           </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-center p-6 bg-[#f0f4f8] rounded-xl">
             <div class="text-4xl mb-3">🏗️</div>
             <h3 class="font-bold text-primary mb-2">建筑工程</h3>
             <p class="text-sm text-gray-600">楼宇建设、装饰装修、防水工程</p>
           </div>
-          <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-center p-6 bg-[#f0f4f8] rounded-xl">
             <div class="text-4xl mb-3">⚡</div>
             <h3 class="font-bold text-primary mb-2">能源电力</h3>
             <p class="text-sm text-gray-600">发电厂、输配电、储能设施</p>
